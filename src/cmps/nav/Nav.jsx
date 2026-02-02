@@ -10,7 +10,7 @@ export function Nav() {
 
   return (
     <nav>
-      <a href="#" onClick={() => setActiveNav('#')}
+      <a href="#top" onClick={() => setActiveNav('#')}
         title='home' className={activeNav === '#' ? 'active' : ''}>
         <AiOutlineHome />
       </a>

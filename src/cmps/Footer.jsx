@@ -6,10 +6,10 @@ import { siteData } from '../config/siteData'
 export function Footer() {
   return (
     <footer>
-      <a href="#" className="footer-logo">{siteData.footerLogo}</a>
+      <a href="#top" className="footer-logo">{siteData.footerLogo}</a>
 
       <ul className="permalinks">
-        <li><a href="#">Home</a></li>
+        <li><a href="#top">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#work">Work</a></li>

@@ -4,7 +4,7 @@ import { siteData } from '../../config/siteData'
 
 export function Header() {
   return (
-    <header>
+    <header id="top">
       <div className="container header-container">
         <h2>{siteData.greeting}</h2>
         <h1>{siteData.name}</h1>
