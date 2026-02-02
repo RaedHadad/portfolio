@@ -1,26 +1,29 @@
 import { useRef } from 'react'
 import emailjs from 'emailjs-com'
-
 import { MdOutlineMailOutline } from 'react-icons/md'
-import { RiMessengerLine } from 'react-icons/ri'
 import { BsWhatsapp } from 'react-icons/bs'
-
+import { siteData } from '../../config/siteData'
 
 export function Contact() {
   const form = useRef()
 
   const sendEmail = (e) => {
     e.preventDefault()
-
-    emailjs.sendForm('service_xhssphg', 'template_m8tvg6e', form.current, 'PMOpxWjnHtxv8Cn7j')
+    const { emailjsServiceId, emailjsTemplateId, emailjsPublicKey } = siteData
+    if (!emailjsServiceId || emailjsServiceId === 'your_service_id') {
+      alert('Contact form is not configured yet. Please add your EmailJS keys in src/config/siteData.js')
+      return
+    }
+    emailjs.sendForm(emailjsServiceId, emailjsTemplateId, form.current, emailjsPublicKey)
       .then((result) => {
         console.log(result.text)
+        e.target.reset()
       }, (error) => {
-        console.log(error.text)
+        console.error(error.text)
       })
-
-    e.target.reset()
   }
+
+  const whatsappLink = `https://wa.me/${siteData.whatsappNumber.replace(/\s/g, '')}`
 
   return (
     <section id="contact">
@@ -30,34 +33,25 @@ export function Contact() {
       <div className="container contact-container">
         <div className="contact-options">
           <article className="contact-option">
-            <MdOutlineMailOutline className='conatct-option-icon' />
+            <MdOutlineMailOutline className='contact-option-icon' />
             <h4>Email</h4>
-            <h5>Noamgr11@gmail.com</h5>
-            <a href="mailto:Noamgr11@gmail.com" target='_blank'>Send a massage</a>
+            <h5>{siteData.email}</h5>
+            <a href={`mailto:${siteData.email}`} target="_blank" rel="noreferrer">Send a message</a>
           </article>
-          
           <article className="contact-option">
-            <RiMessengerLine className='conatct-option-icon' />
-            <h4>Messenger</h4>
-            <h5>Noam Green</h5>
-            <a href="http://m.me/noam.green.420/" target='_blank'>Send a massage</a>
-          </article>
-        
-          <article className="contact-option">
-            <BsWhatsapp className='conatct-option-icon' />
+            <BsWhatsapp className='contact-option-icon' />
             <h4>WhatsApp</h4>
-            <h5>+972 50 7645 379</h5>
-            <a href="https://wa.me/+972507645379 " target='_blank'>Send a massage</a>
+            <h5>{siteData.whatsappDisplay}</h5>
+            <a href={whatsappLink} target="_blank" rel="noreferrer">Send a message</a>
           </article>
-        
         </div>
         <form ref={form} onSubmit={sendEmail}>
           <input type="text" name='name' placeholder='Your Full Name' required
           />
           <input type="email" name='email' placeholder='Your Email' required />
-          <textarea name="message" rows="7" placeholder='Your Massage' required
+          <textarea name="message" rows="7" placeholder="Your Message" required
           ></textarea>
-          <button type='submin' className='btn btn-primary'>Send Message</button>
+          <button type="submit" className='btn btn-primary'>Send Message</button>
         </form>
       </div>
 

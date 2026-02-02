@@ -1,11 +1,4 @@
-import { ProtfolioProj } from '../../services/portfolio.service'
-import IMG1 from '../../assets/img/portfolio1.jpg'
-import IMG2 from '../../assets/img/portfolio2.jpg'
-import IMG3 from '../../assets/img/portfolio3.jpg'
-import IMG4 from '../../assets/img/portfolio4.jpg'
-import IMG5 from '../../assets/img/portfolio5.png'
-import IMG6 from '../../assets/img/portfolio6.jpg'
-
+import { PortfolioProj } from '../../services/portfolio.service'
 
 export function Portfolio() {
 
@@ -16,7 +9,7 @@ export function Portfolio() {
       <h2>Portfolio</h2>
       <div className="container portfolio-container">
         {
-          ProtfolioProj.map(({ id, img, title, github, demo }) => {
+          PortfolioProj.map(({ id, img, title, github, demo }) => {
             return (
               <article key={id} className="portfolio-item">
                 <div className="portfolio-item-img">
@@ -24,11 +17,11 @@ export function Portfolio() {
                 </div>
                 <h3>{title}</h3>
                 <div className="portfolio-item-cta">
-                  <a href={github} className="btn">Github</a>
-                  <a href={demo} className="btn btn-primary"
-                    target='_blank'>
+                  <a href={github} className="btn" target="_blank" rel="noreferrer">GitHub</a>
+                  <a href={demo} className="btn btn-primary" target="_blank" rel="noreferrer">
                     Live Demo
-                  </a></div>
+                  </a>
+                </div>
               </article>
             )
           })

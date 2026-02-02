@@ -14,7 +14,7 @@ footer {
     display: inline-block;
  
   }
-  .parmalinks {
+  .permalinks {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -41,7 +41,7 @@ footer {
     :hover {
       background-color: transparent;
       color: var(--color-bg);
-      border-color: var((--color-bg));
+      border-color: var(--color-bg);
     }
   }
   .footer-copyright {
@@ -52,7 +52,7 @@ footer {
 
 // Mobile
 @media screen and (max-width: 600px) {
-  .parmalinks {
+  .permalinks {
     flex-direction: column;
     gap: 1.5rem;
   }

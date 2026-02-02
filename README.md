@@ -55,9 +55,24 @@ The production-ready files will be generated in the `build` directory, which you
 
 ## Customization
 
-### Content
+### Change your information (name, contact, social, about)
 
-To customize the content of your portfolio website, modify the relevant components in the `src/components` directory. You can add or remove sections, update project information, and adjust the text as per your requirements.
+**Edit one file only:** `src/config/siteData.js`
+
+- **Page title**, **name**, **title** (e.g. Full Stack Developer)
+- **About text** and about cards (certificate, projects count)
+- **Contact:** email, Messenger link/name, WhatsApp number
+- **Social links:** LinkedIn, GitHub, Facebook, Instagram
+- **Footer:** logo text, copyright name
+- **EmailJS:** for the contact form, add your [EmailJS](https://www.emailjs.com/) service ID, template ID, and public key
+
+### Projects
+
+Edit `src/services/portfolio.service.jsx` to update project titles, GitHub links, demo URLs, and image imports. Replace images in `src/assets/img/` (e.g. `me.png`, `me-about.jpg`) and the CV at `src/assets/img/cv.pdf`.
+
+### Content (sections / copy)
+
+To change section copy or structure, modify the relevant components in the `src/cmps` directory.
 
 ### Styling
 

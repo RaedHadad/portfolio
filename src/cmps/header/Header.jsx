@@ -1,21 +1,20 @@
 import { CTA } from '../header/CTA'
 import { HeaderSocial } from '../header/HaderSocials'
-import ME from '../../assets/img/me.png'
+import { siteData } from '../../config/siteData'
 
 export function Header() {
-
   return (
     <header>
       <div className="container header-container">
-        <h2>Hello I'm</h2>
-        <h1>Noam Green</h1>
-        <h3 className="text-light">Full Stack Developer</h3>
+        <h2>{siteData.greeting}</h2>
+        <h1>{siteData.name}</h1>
+        <h3 className="text-light">{siteData.title}</h3>
+        {siteData.tagline && (
+          <p className="header-tagline">{siteData.tagline}</p>
+        )}
         <CTA />
         <div className='icon-container'>
           <HeaderSocial />
-        </div>
-        <div className='me'>
-          <img src={ME} alt="" />
         </div>
 
         <a href="#contact" className='scroll-down'>Scroll Down</a>
