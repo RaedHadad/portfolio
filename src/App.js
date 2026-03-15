@@ -8,7 +8,6 @@ import { WorkEducation } from './cmps/work/WorkEducation'
 import { Portfolio } from './cmps/portfolio/Portfolio'
 import { Contact } from './cmps/contact/Contact'
 import { Footer } from './cmps/Footer'
-import { Services } from './cmps/Services'
 
 export default function App() {
   useEffect(() => {
@@ -22,7 +21,6 @@ export default function App() {
       <About />
       <Experince />
       <WorkEducation />
-      <Services />
       <Portfolio />
       <Contact />
       <Footer />
