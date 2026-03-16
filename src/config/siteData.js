@@ -11,8 +11,8 @@ export const siteData = {
   // ----- Header -----
   greeting: "Hello I'm",
   name: "Raed Haddad",
-  title: "Software Engineer | Technical Leader",
-  tagline: "Bridging technical excellence with operational impact · NOC · DevOps · Automation",
+  title: "",
+  tagline: "",
 
   // ----- About -----
   aboutText: `Motivated Graduate Software Engineer and certified Practical Engineer with a strong background in technical leadership and operations management. Experienced in driving process improvements, establishing Standard Operating Procedures, and conducting Root Cause Analysis to ensure high service availability. Skilled in bridging the gap between technical teams and operational goals through automation and detailed documentation.`,
